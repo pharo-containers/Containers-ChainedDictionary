@@ -2,7 +2,7 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'ContainersChainedDictionary',
-      #directory : '',
+      #directory : 'src',
       #platforms : [ #pharo ]
     }
   ],
