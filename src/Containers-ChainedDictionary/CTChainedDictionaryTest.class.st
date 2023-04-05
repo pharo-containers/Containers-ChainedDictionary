@@ -232,7 +232,7 @@ CTChainedDictionaryTest >> testCopyProperties [
 
 	| config |
 	config := self environmentClass new.
-	self deny: config properties == config copy properties
+	self deny: config properties identicalTo: config copy properties
 ]
 
 { #category : #'tests-iteration' }
@@ -454,8 +454,8 @@ CTChainedDictionaryTest >> testPropertyAtIfAbsentPut [
 	self assert: (self childEnvironment propertyAt: #foo ifAbsentPut: [ 'baz' ]) equals: 'bar'.
 
 	"ifAbsentPut: set the property with the put value"
-	self assert: (self childEnvironment propertyAt: #bar ifAbsentPut: [ 'baz' ]) = 'baz'.
-	self assert: (self childEnvironment propertyAt: #bar) = 'baz'
+	self assert: (self childEnvironment propertyAt: #bar ifAbsentPut: [ 'baz' ]) equals: 'baz'.
+	self assert: (self childEnvironment propertyAt: #bar) equals: 'baz'
 ]
 
 { #category : #'tests-lookup-properties' }
